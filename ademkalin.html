@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adem Kalın</title>
+<meta name="description" content="Software Engineering Manager — Engineering leader, AI transformation, team building.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f9f8f6;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b6b6b;
+    --text-tertiary: #9a9a9a;
+    --border: #e8e6e1;
+    --border-hover: #c8c5be;
+    --tag-bg: #f2f0ec;
+    --tag-text: #4a4a4a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--off-white);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  nav {
+    padding: 24px 0 20px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+  .nav-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5a9e6e;
+    display: inline-block;
+    margin-left: 7px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .hero-role {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-bio {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--tag-text);
+    background: var(--tag-bg);
+    border: 0.5px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+  }
+  .tag-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+    margin-right: 2px;
+  }
+
+  .section {
+    padding: 52px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-text {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 520px;
+  }
+  .section-text strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .connect-section {
+    padding: 52px 0 0;
+  }
+  .primary-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .link-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 18px;
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 100px;
+  }
+  .link-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .link-card:hover .card-arrow {
+    transform: translate(3px, -3px);
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .card-platform {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .card-icon.linkedin { background: #0a66c2; }
+  .card-icon.github { background: #1a1a1a; }
+  .card-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .card-arrow {
+    font-size: 16px;
+    color: var(--text-tertiary);
+    transition: transform 0.2s ease;
+    line-height: 1;
+  }
+  .card-desc {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    line-height: 1.4;
+  }
+
+  .secondary-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0 52px;
+  }
+  .secondary-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .secondary-link:hover { color: var(--text-primary); }
+
+  footer {
+    padding: 24px 0;
+    border-top: 0.5px solid var(--border);
+  }
+  footer p {
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 520px) {
+    .container { padding: 0 20px; }
+    .hero { padding: 52px 0 44px; }
+    .hero-title { font-size: 34px; }
+    .primary-links { grid-template-columns: 1fr; }
+    .link-card { min-height: auto; }
+    .section { padding: 40px 0; }
+    .connect-section { padding: 40px 0 0; }
+    .secondary-links { padding-bottom: 40px; }
+  }
+
+  @media (min-width: 521px) and (max-width: 768px) {
+    .hero-title { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <span class="nav-name">Adem Kalın <span class="nav-dot"></span></span>
+    <span style="font-size:12px; color: var(--text-tertiary);">Istanbul</span>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Adem Kalın</h1>
+      <p class="hero-role">Software Engineering Manager</p>
+      <p class="hero-bio">Engineering leader who builds teams, shapes culture, and drives transformation. Passionate about the human side of technology — how people adopt it, how organizations evolve with it, and how to lead through that change. When not thinking about all this, probably behind a lens, behind the wheel, or somewhere new on the map.</p>
+      <div class="tags">
+        <span class="tag-label">Open to</span>
+        <span class="tag">Speaking</span>
+        <span class="tag">Consulting</span>
+        <span class="tag">Interesting conversations</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Currently</p>
+      <p class="section-text">Leading my team through the <strong>agentic AI shift</strong> — not just adopting new tools, but rethinking how we work, how we build, and what engineering culture looks like in this new era.</p>
+    </div>
+  </section>
+
+  <section class="connect-section">
+    <div class="container">
+      <p class="section-label">Connect</p>
+
+      <div class="primary-links">
+        <a class="link-card" href="https://www.linkedin.com/in/ademkalin/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-platform">
+              <div class="card-icon linkedin">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </div>
+              <span class="card-name">LinkedIn</span>
+            </div>
+            <span class="card-arrow">↗</span>
+          </div>
+          <p class="card-desc">Professional profile & experience</p>
+        </a>
+
+        <a class="link-card" href="https://github.com/ademkalin" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="card-platform">
+              <div class="card-icon github">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <span class="card-name">GitHub</span>
+            </div>
+            <span class="card-arrow">↗</span>
+          </div>
+          <p class="card-desc">Code, projects & contributions</p>
+        </a>
+      </div>
+
+      <div class="secondary-links">
+        <a class="secondary-link" href="https://www.instagram.com/ademkalin" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+          @ademkalin
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© Adem Kalın</p>
+  </div>
+</footer>
+
+</body>
+</html>
